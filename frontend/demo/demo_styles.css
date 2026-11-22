@@ -1,0 +1,185 @@
+/* Realistic e-commerce styles embedded with intentional dark patterns */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+  padding-bottom: 80px;
+}
+
+.banner-urgency {
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: #ffffff;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+}
+
+.product-image {
+  background: #f1f5f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  height: 280px;
+}
+
+.product-info h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.price-strikethrough {
+  font-size: 18px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.scarcity-badge {
+  display: inline-block;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.countdown-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.addon-section {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.checkbox-row input {
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.btn-primary-action {
+  width: 100%;
+  background: #16a34a;
+  color: #ffffff;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.btn-primary-action:hover {
+  background: #15803d;
+}
+
+/* Obscured cancel link & hidden fee styles */
+.muted-link {
+  display: block;
+  text-align: center;
+  font-size: 10px !important;
+  color: #cbd5e1 !important; /* Low contrast against white */
+  text-decoration: none;
+  margin-top: 12px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.muted-link:hover {
+  text-decoration: underline;
+}
+
+.fee-fineprint {
+  font-size: 9px;
+  color: #94a3b8;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Modal Simulation */
+.modal-overlay {
+  background: rgba(15, 23, 42, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 440px;
+  width: 90%;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.modal-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}

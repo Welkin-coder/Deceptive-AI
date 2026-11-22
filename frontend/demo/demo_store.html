@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexGadgets - Special Clearance Checkout</title>
+  <link rel="stylesheet" href="/static/demo_styles.css">
+</head>
+<body>
+
+  <!-- 1. False Urgency Banner -->
+  <div class="banner-urgency" id="urgency-banner">
+    🔥 HURRY! Only 1 item left in stock - 24 people have this in their cart right now!
+  </div>
+
+  <div class="container">
+    <div class="product-card">
+      <div class="product-image">
+        🎧
+      </div>
+
+      <div class="product-info">
+        <div class="scarcity-badge" id="scarcity-pill">
+          ⚡ High Demand: Booked 14 times in the last hour
+        </div>
+
+        <h1>AcousticPro Noise-Cancelling Headphones</h1>
+        
+        <div class="product-price">
+          $49.99 <span class="price-strikethrough">$149.99</span>
+        </div>
+
+        <!-- 2. Countdown Timer Box -->
+        <div class="countdown-box countdown" id="deal-timer" data-timer="299">
+          ⏳ Exclusive price expires in: <span id="timer-display">04:59</span>
+        </div>
+
+        <div class="addon-section">
+          <!-- 3. Pre-checked Opt-in: Sneak into Basket (Insurance) -->
+          <div class="checkbox-row">
+            <input type="checkbox" id="insurance-checkbox" checked>
+            <label for="insurance-checkbox">
+              <b>Add 2-Year Platinum Warranty & Protection</b> (+$7.99 added to order)
+            </label>
+          </div>
+
+          <!-- 4. Pre-checked Opt-in: Third-party Marketing -->
+          <div class="checkbox-row">
+            <input type="checkbox" id="marketing-checkbox" checked>
+            <label for="marketing-checkbox">
+              Subscribe to marketing partner newsletters and share purchase history with affiliates.
+            </label>
+          </div>
+
+          <!-- 5. Trick Question / Double Negative -->
+          <div class="checkbox-row">
+            <input type="checkbox" id="trick-optout">
+            <label for="trick-optout">
+              Uncheck if you do not want to receive marketing updates from our advertising partners.
+            </label>
+          </div>
+        </div>
+
+        <!-- Primary Commercial Button -->
+        <button class="btn-primary-action" id="checkout-btn">
+          CLAIM DISCOUNT & ORDER NOW
+        </button>
+
+        <!-- 6. Hidden Fee / Drip Pricing Disclaimer -->
+        <p class="fee-fineprint" id="hidden-processing-fee">
+          * A non-refundable processing fee of $9.95 and mandatory handling fee applies at checkout.
+        </p>
+
+        <!-- 7. Obscured Link / Confirm-shaming Link -->
+        <a href="#" class="muted-link" id="cancel-offer-link">
+          No thanks, I hate saving money and I prefer paying full price
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Countdown script simulation -->
+  <script>
+    let secondsLeft = 299;
+    const timerDisplay = document.getElementById('timer-display');
+    const interval = setInterval(() => {
+      if (document.getElementById('deal-timer').dataset.frozen === 'true') {
+        clearInterval(interval);
+        return;
+      }
+      secondsLeft--;
+      if (secondsLeft <= 0) {
+        clearInterval(interval);
+        return;
+      }
+      const mins = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
+      const secs = String(secondsLeft % 60).padStart(2, '0');
+      if (timerDisplay) timerDisplay.textContent = `${mins}:${secs}`;
+    }, 1000);
+  </script>
+
+  <!-- Load Real-Time Deceptive UI Detection and Remediation Script -->
+  <script src="../content_script.js"></script>
+
+</body>
+</html>
