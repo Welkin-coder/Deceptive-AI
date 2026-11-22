@@ -125,6 +125,16 @@ def validate_and_normalize_url(url: Optional[str]) -> str:
 # -----------------------------------------------------------------------------
 # API Endpoints
 # -----------------------------------------------------------------------------
+
+@app.get("/", tags=["System"])
+async def root():
+    return {
+        "status": "online",
+        "message": "Deceptive UI/UX Detection Engine is running",
+        "docs": "/docs",
+        "health": "/health",
+    }
+    
 @app.get("/health", tags=["System"])
 async def health_check() -> Dict[str, Any]:
     """Returns engine health status, NLP model state, and cache statistics."""
