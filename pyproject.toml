@@ -1,2 +1,17 @@
+[project]
+name = "deceptive-ui-detector"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "pydantic-settings",
+    "beautifulsoup4",
+    "playwright",
+    "spacy>=3.8.0",
+    "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+]
+
 [tool.vercel]
 entrypoint = "backend.main:app"
